@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#Install\ninstall.packages('igraph')\ninstall.packages('network') \ninstall.packages('sna')\ninstall.packages('ndtv')\ninstall.packages('visNetwork')\n\nnodes <- read.csv(\"Dataset1-Media\")",
+    "created" : 1480681876471.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "1358626469",
+    "id" : "22DEB966",
+    "lastKnownWriteTime" : 4696347008,
+    "last_content_update" : 1480682112462,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

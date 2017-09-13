@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(ggplot2)\nlibrary(hexbin)\n\ndat <- data.frame(x = rnorm(10000), y = rnorm(10000))\n\n\nplot(dat)\n\nggplot(dat, aes(x = x, y = y)) +\n  geom_hex() + coord_fixed() +\n  scale_fill_gradientn(colours = viridis(256, option = \"D\"))\n\n# using code from RColorBrewer to demo the palette\nn = 200\nimage(\n  1:n, 1, as.matrix(1:n),\n  col = viridis(n, option = \"D\"),\n  xlab = \"viridis n\", ylab = \"\", xaxt = \"n\", yaxt = \"n\", bty = \"n\"\n)",
+    "created" : 1480560663005.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2835341065",
+    "id" : "8F067341",
+    "lastKnownWriteTime" : 1480599246,
+    "last_content_update" : 1480599246014,
+    "path" : "~/Dropbox/R/Divvy/hex_distribution_heatmap.R",
+    "project_path" : "hex_distribution_heatmap.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

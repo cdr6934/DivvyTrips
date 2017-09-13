@@ -1,0 +1,8 @@
+#Install
+install.packages('igraph')
+install.packages('network') 
+install.packages('sna')
+install.packages('ndtv')
+install.packages('visNetwork')
+
+nodes <- read.csv("Dataset1-Media")

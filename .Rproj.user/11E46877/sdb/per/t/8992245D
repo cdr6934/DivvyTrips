@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(dplyr)\nlibrary(ggplot2)\nlibrary(viridis)\nlibrary(ggthemes)\n\n#import all the files\ntemp <- list.files(pattern=\"*.csv\")\nalldata<- do.call(rbind, lapply(temp, function(x) read.csv(x, stringsAsFactors = FALSE)))\n\n\n#Data manipulation / Munging\nalldata$day <- strptime(alldata$starttime, format = \"%m/%d/%Y\")\nalldata$day <- as.character(alldata$day)\nrides.raw <- aggregate(alldata$trip_id ,by=list(alldata$day), length)\n\n\nrides.raw$Group.1<-as.Date(rides.raw$Group.1,format='%Y-%m-%d')\nrides.raw$days<-factor(weekdays(rides.raw$Group.1,T),levels = rev(c(\"Mon\", \"Tue\", \"Wed\", \"Thu\",\"Fri\", \"Sat\", \"Sun\")))\nrides.raw$week<-as.numeric(format(rides.raw$Group.1,\"%W\"))\nrides.raw$month<-as.numeric(format(rides.raw$Group.1,\"%m\"))\nrides.raw$year<-as.numeric(format(rides.raw$Group.1,\"%Y\"))\n\n\n#Create the heatmap\nggplot(rides.raw, aes(x = week, y = days, fill = x)) +\n  scale_fill_viridis(name=\"Sales\",option = \"D\", limits = c(0, max(rides.raw$x))) + \n  geom_tile(color = \"white\", size = 0.4) + facet_wrap(\"year\", ncol = 1) + \n  scale_x_continuous(expand = c(0, 0), breaks = seq(1, 52, length = 12), \n                     labels = c(\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"))+\n  theme_tufte()",
+    "created" : 1480421692490.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1284008785",
+    "id" : "8992245D",
+    "lastKnownWriteTime" : 1480682141,
+    "last_content_update" : 1480682141534,
+    "path" : "~/Dropbox/R/Divvy/WeeklyHeatmap.R",
+    "project_path" : "WeeklyHeatmap.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

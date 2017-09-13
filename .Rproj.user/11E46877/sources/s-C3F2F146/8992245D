@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1480421692490.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1284008785",
+    "id" : "8992245D",
+    "lastKnownWriteTime" : 1480682141,
+    "last_content_update" : 1480682141534,
+    "path" : "~/Documents/r-sessions/Divvy/WeeklyHeatmap.R",
+    "project_path" : "WeeklyHeatmap.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
